@@ -1,3 +1,20 @@
-<p style="color: darkred">
-  server2 works!
-</p>
+
+
+<hr>
+<h4>What ingradients do you have?</h4>
+<div>
+  <span>Type in ingradients: </span>
+  <input type="text" [(ngModel)]="ingradientName">
+</div>
+
+<div>
+  <button class="btn btn-primary"  (click)="check()" style="width: 100px"> Check </button>
+
+</div>
+<span *ngIf=checked>
+  <span *ngIf="isDish; else elseBlock" style="background: greenyellow"> Use {{ingradientName}} to cook a dish {{ result }}</span>
+  <ng-template #elseBlock style="background: red"> {{ result }} </ng-template>
+</span>
+<div>
+  <button class="btn btn-secondary"  (click)="clear()" style="width: 100px"> Reset </button>
+</div>
